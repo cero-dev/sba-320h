@@ -1,21 +1,22 @@
-// import "../styles/Characters.css";
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default function Characters({ data, onClick }) {
+export default function Characters({ data }) {
   return (
     <div className="characters">
-      {data.map((dataItem) => {
+      {data.map((characterInfo) => {
         return (
-          <div
+          <Link
+            key={characterInfo.id}
+            to={`/character/${characterInfo.id}`}
             className="card"
-            key={dataItem.id}
             style={{
-              background: `url(${dataItem.thumbnail.path}.${dataItem.thumbnail.extension}) no-repeat center`,
+              background: `url(${characterInfo.thumbnail.path}.${characterInfo.thumbnail.extension}) no-repeat center`,
               backgroundSize: "cover",
             }}
-            // onClick={() => onClick(dataItem.id)}
           >
-            <div className="cardTitle">{dataItem.name}</div>
-          </div>
+            <div className="cardTitle">{characterInfo.name}</div>
+          </Link>
         );
       })}
     </div>

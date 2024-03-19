@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import md5 from "md5";
+import axios from "axios";
 import Characters from "./Characters";
 
 export default function Search() {
@@ -20,17 +21,23 @@ export default function Search() {
       const ts = new Date().getTime();
       const hash = md5(ts + privateKey + publicKey);
 
+      //switched to the more traditional axios for better readability
       try {
-        const response = await fetch(
-          `https://gateway.marvel.com:443/v1/public/characters?apikey=${publicKey}&hash=${hash}&ts=${ts}&nameStartsWith=${name}&limit=100`
+        const response = await axios.get(
+          `https://gateway.marvel.com:443/v1/public/characters`,
+          {
+            params: {
+              apikey: publicKey,
+              hash: hash,
+              ts: ts,
+              nameStartsWith: name,
+              limit: 100,
+            },
+          }
         );
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-        setData(result.data);
+        setData(response.data.data);
       } catch (error) {
-        console.error("There was an error:", error);
+        console.error("Unexpected Error! ", error);
       }
     };
 
