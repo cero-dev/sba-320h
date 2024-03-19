@@ -11,9 +11,9 @@ I used vite + react, with the react-router-dom to allow for two views, the Main 
 Go to the Deployed Site: https://sba-320h.onrender.com/
 All you have to do is start typing a marvel character
 Ex:
-Spider-Man
-Iron Man
-Hulk
-Wolverine
-Ben Parker
+Spider-Man,
+Iron Man,
+Hulk,
+Wolverine,
+Ben Parker,
 The list should start populating, and then you just need to click on a character and it will take you to a detail page about the character and a button at the bottom to go back to the search page.
