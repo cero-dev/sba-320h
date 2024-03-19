@@ -1,11 +1,15 @@
 import './App.css'
-import Search from './components/Search'
+import SearchPage from './routes/SearchPage';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Search />
-    </div>
+    <Router>
+      <Routes>
+        {/* Have the root, as the search element */}
+        <Route path={"/"} element={<SearchPage/>}/>
+      </Routes>
+    </Router>
   )
 }
 

@@ -1,42 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #201f1f;
+}
+
+h1 {
+  margin: 0;
+  color: white;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
   padding: 2rem;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.characters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .card {
-  padding: 2em;
+  width: 700px;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+  border: 3px solid black;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  border: 3px solid rgb(141, 141, 141);
+  cursor: pointer;
+}
+
+.cardTitle {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(179, 0, 0);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.searchTitle {
+  background-color: #202020;
+  width: 100%;
+}
+
+.searchMainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 10px;
+
+  input {
+    width: 100%;
+    max-width: 600px;
+    padding: 5px 10px;
+    background-color: #363434;
+    border: none;
+    color: white;
+    font-size: 20px;
+  }
 }
