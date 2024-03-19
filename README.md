@@ -1,4 +1,4 @@
-# Marvel Character Databbase
+# Marvel Character Database
 
 This application connects to the Marvel API, to allow for character lookup, and once you have found the character you wanted, it generates a new page that gives a short description of the character and notable comic books associated with the character.
 
